@@ -1,0 +1,22 @@
+<main class="app-shell">
+	<h1>Online Store</h1>
+
+	<section class="categories" aria-label="Product categories">
+		@for (category of categories; track category.id) {
+			<button
+				type="button"
+				class="category-btn"
+				[class.active]="selectedCategoryId() === category.id"
+				(click)="selectCategory(category.id)"
+			>
+				{{ category.name }}
+			</button>
+		}
+	</section>
+
+	@if (selectedCategoryId() === null) {
+		<p class="welcome-message">Select a category to view products.</p>
+	} @else {
+		<app-product-list [products]="selectedProducts()"></app-product-list>
+	}
+</main>

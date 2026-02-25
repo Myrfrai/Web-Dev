@@ -15,7 +15,8 @@
 
                 <form id="todoForm">
                     <label for="taskInput">New Task</label>
-                    <input id="taskInput" type="text" placeholder="New Task" autocomplete="off">
+                    <input id="taskInput" type="text" placeholder="New Task" autocomplete="off" oninput="if (this.value ===1) alert('Error') ">
+
                     <button class="add-btn" type="submit">Add</button>
                 </form>
 

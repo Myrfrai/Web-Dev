@@ -3,6 +3,7 @@ const taskInput = document.getElementById('taskInput');
 const todoList = document.getElementById('todoList');
 
 function createTodoItem(text) { 
+
       const li = document.createElement('li');
       li.className = 'item';
  
@@ -45,11 +46,21 @@ function createTodoItem(text) {
       event.preventDefault();
 
       const text = taskInput.value.trim();
-      
+
+      if (text.length > 10){
+        alert("The task should be less than 10 signs");
+        return;
+      };
+
       if (!text) {
         return;
       };
 
+      if (text === "1"){
+        alert("Error");
+        return;
+      }
+      
       const item = createTodoItem(text);
       todoList.appendChild(item);
 
