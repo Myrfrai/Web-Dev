@@ -1,0 +1,22 @@
+<section class="card">
+  <h1>Albums</h1>
+
+  @if (loading) {
+    <p>Loading albums...</p>
+  } 
+  @else if (albums.length === 0) {
+    <p>No albums available.</p>
+  } 
+  @else {
+    <ul class="list">
+      @for (album of albums; track album.id) {
+        <li class="item" (click)="openAlbum(album.id)">
+          <div>
+            <p class="title">#{{ album.id }} — {{ album.title }}</p>
+          </div>
+          <button type="button" class="delete" (click)="deleteAlbum($event, album.id)">Delete</button>
+        </li>
+      }
+    </ul>
+  }
+</section>

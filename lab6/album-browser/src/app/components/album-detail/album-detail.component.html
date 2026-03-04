@@ -1,0 +1,23 @@
+<section class="card">
+  @if (loading) {
+    <p>Loading album...</p>
+  }
+  @else if (!album) {
+    <p>Album not found.</p>
+    <button type="button" (click)="backToAlbums()">Back</button>
+  }
+  @else {
+    <h1>Album #{{ album.id }}</h1>
+    <p><strong>User ID:</strong> {{ album.userId }}</p>
+    <p><strong>Current title:</strong> {{ album.title }}</p>
+
+    <label for="title">Edit title</label>
+    <input id="title" type="text" [(ngModel)]="titleDraft" />
+
+    <div class="actions">
+      <button type="button" (click)="save()">Save</button>
+      <a [routerLink]="['/albums', album.id, 'photos']">View Photos</a>
+      <button type="button" (click)="backToAlbums()">Back</button>
+    </div>
+  }
+</section>

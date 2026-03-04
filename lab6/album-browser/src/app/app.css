@@ -1,0 +1,36 @@
+:host {
+	display: block;
+	min-height: 100vh;
+}
+
+.topbar {
+	border-bottom: 1px solid #e5e7eb;
+	background: #ffffff;
+}
+
+.nav {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0.75rem 1rem;
+	display: flex;
+	gap: 1rem;
+}
+
+.nav a {
+	text-decoration: none;
+	color: #374151;
+	padding: 0.35rem 0.5rem;
+	border-radius: 0.375rem;
+}
+
+.nav a.active {
+	background: #f3f4f6;
+	color: #111827;
+	font-weight: 600;
+}
+
+.page {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 1rem;
+}
