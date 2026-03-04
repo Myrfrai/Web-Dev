@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, output, input } from '@angular/core';
+import { Component, output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../models/product.model';
 
@@ -56,7 +56,6 @@ import { Product } from '../models/product.model';
     </div>
   `,
   styleUrl: './product-item.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductItemComponent {
   readonly product = input.required<Product>();
@@ -97,7 +96,7 @@ export class ProductItemComponent {
   }
 
   like(): void {
-    this.product().likes += 1;
+    this.product().likes++
   }
 
   delete(): void {
@@ -107,7 +106,7 @@ export class ProductItemComponent {
   shareWhatsApp(): void {
     const p = this.product();
     const text = `Check out this product: ${p.link}`;
-    const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/?text=${encodeURIComponent(text)}`; 
     window.open(url, '_blank');
   }
 

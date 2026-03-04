@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { ProductListComponent } from './product-list/product-list.component';
 import { CATEGORIES, PRODUCTS } from './data/products';
 
@@ -7,7 +7,6 @@ import { CATEGORIES, PRODUCTS } from './data/products';
   imports: [ProductListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   protected readonly categories = CATEGORIES;

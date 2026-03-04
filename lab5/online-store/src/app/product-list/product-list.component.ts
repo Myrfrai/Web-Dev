@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, input, signal } from '@angular/core';
+import { Component, effect, input, signal } from '@angular/core';
 import { Product } from '../models/product.model';
 import { ProductItemComponent } from '../product-item/product-item.component';
 
@@ -21,7 +21,6 @@ import { ProductItemComponent } from '../product-item/product-item.component';
     }
   `,
   styleUrl: './product-list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent {
   readonly products = input<Product[]>([]);
