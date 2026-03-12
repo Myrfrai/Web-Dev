@@ -25,6 +25,11 @@ export class AlbumDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (!Number.isFinite(id) || id <= 0) {
+      this.loading = false;
+      return;
+    }
+
     this.albumService.getAlbum(id).subscribe({
       next: (album) => {
         this.album = album;

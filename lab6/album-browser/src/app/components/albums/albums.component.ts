@@ -23,6 +23,7 @@ export class AlbumsComponent implements OnInit {
   ngOnInit(): void {
     this.albumService.getAlbums().subscribe({
       next: (albums) => {
+        console.log('Albums:', albums);
         this.albums = albums;
         this.loading = false;
       },
