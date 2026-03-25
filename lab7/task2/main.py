@@ -6,7 +6,7 @@ animals = [
     Cat("Milo", 2, "white")
 ]
 
-for animal in animals:
-    print(animal)
-    print(animal.speak())
-    print(animal.move())
+for obj in animals:
+    print(obj)
+    print(obj.speak())
+    print(obj.move())
